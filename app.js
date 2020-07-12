@@ -7,6 +7,9 @@ const chrome = require('selenium-webdriver/chrome');
 const { Keyboard } = require('selenium-webdriver/lib/input');
 // chrome.setDefaultService(new chrome.ServiceBuilder('./chromedriver.exe').build());
 
+const email=''
+const password=''
+
 async function teste() {
     //ABRIR CHROME
     var driver = await new Builder().forBrowser('chrome').build()
@@ -31,13 +34,13 @@ async function teste() {
                 ))).click();
                 await (await driver.wait(until.elementLocated(
                     By.js(`return document.querySelector('#ap_email')`)
-                ))).sendKeys('marcossilvatl2@hotmail.com');
+                ))).sendKeys(email);
                 await (await driver.wait(until.elementLocated(
                     By.js(`return document.querySelector('#continue')`)
                 ))).click();
                 await (await driver.wait(until.elementLocated(
                     By.js(`return document.querySelector('#ap_password')`)
-                ))).sendKeys('00625400');
+                ))).sendKeys(password);
                 await (await driver.wait(until.elementLocated(
                     By.js(`return document.querySelector('input[name="rememberMe"]')`)
                 ))).click();
